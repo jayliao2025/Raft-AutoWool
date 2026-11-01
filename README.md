@@ -23,6 +23,15 @@ No menu, no hotkey, no framework dependencies — just one DLL and a config file
 2. Drop `AutoWool.dll` into `Raft/BepInEx/plugins/`.
 3. Start the game. A config file appears at `BepInEx/config/jayliao.AutoWool.cfg`.
 
+### Raft-specific gotchas
+
+Read this before reporting "it doesn't work" — these four cover almost every failed install.
+
+1. **Set `HideManagerGameObject = true`** in `BepInEx/config/BepInEx.cfg`, under `[Chainloader]`. Raft's startup interferes with BepInEx's manager object otherwise, and plugins may silently fail to load. Restart the game after changing it.
+2. **Launch the game once before adding plugins**, so BepInEx creates its folders and `LogOutput.log`. If that log does not exist after launching, BepInEx itself is not loading — check that `winhttp.dll` and `doorstop_config.ini` sit next to `Raft.exe`, and that your antivirus did not quarantine `winhttp.dll`.
+3. **Verify it loaded**: `BepInEx/LogOutput.log` should contain `Loading [Auto Wool And Milk ...]` and `Chainloader startup complete`.
+4. **Installed but nothing happens?** With `FaithfulMode` on you need shears (wool) or an empty bucket (milk) somewhere in your backpack **or** hotbar. In multiplayer only the host collects.
+
 ## Configuration
 
 | Section | Key | Default | Description |
