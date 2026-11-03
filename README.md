@@ -78,3 +78,14 @@ The build copies `AutoWool.dll` into `BepInEx/plugins` automatically.
 
 - `tools/inspect_assembly.py` dumps type/field/method metadata from `Assembly-CSharp.dll` without loading it. Handy for re-checking class names after a game update.
 - Only llamas and goats are handled; chickens and eggs are untouched.
+
+## Credits
+
+- [BepInEx](https://github.com/BepInEx/BepInEx) by the BepInEx team — the plugin framework this mod runs on. It is not bundled; users install it separately.
+- [RaftMods](https://github.com/aedenthorn/RaftMods) by aedenthorn — a useful reference for Raft plugin structure.
+- [BepInEx Unity Installer](https://www.nexusmods.com/site/mods/287) by aedenthorn — the installer recommended in the installation steps.
+
+## License
+
+MIT — see [LICENSE](LICENSE). You are free to fork, modify and reuse this code. If you publish a modified version, please link back to this repository so people can find the original.
+
